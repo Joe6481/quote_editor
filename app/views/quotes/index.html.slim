@@ -3,4 +3,24 @@
     h1 Quotes
     = link_to "New Quote", new_quote_path, class: "btn btn-primary"
 
+  table.table-auto
+    thead
+      tr
+        th Song
+        th Artist
+        th Year
+    tbody
+      tr
+        td The Sliding Mr. Bones (Next Stop, Pottersville)
+        td Malcolm Lockyer
+        td 1961
+      tr
+        td Witchy Woman
+        td The Eagles
+        td 1972
+      tr
+        td Shining Star
+        td Earth, Wind, and Fire
+        td 1975
+
   = render @quotes
