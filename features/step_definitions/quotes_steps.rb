@@ -15,12 +15,8 @@ When("I click on the existing quote") do
   click_on @quote.name
 end
 
-When("I edit the existing quote") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When("I fill in the edit form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in "quote_name", with: "updated quote"
 end
 
 When("I delete the existing quote") do
@@ -37,7 +33,7 @@ Then("I see the quote details") do
 end
 
 Then("I see the quote has been updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content "updated quote"
 end
 
 Then("I see the quote has been deleted") do

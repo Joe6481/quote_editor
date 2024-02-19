@@ -22,7 +22,13 @@ class QuotesController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    if @quote.update(quote_params)
+      redirect_to quotes_path, notice: t(".success")
+    else
+      render :edit, alert: t(".failure")
+    end
+  end
 
   def destroy; end
 

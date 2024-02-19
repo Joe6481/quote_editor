@@ -14,12 +14,12 @@ Scenario: Showing a quote
   When  I click on the existing quote
   Then  I see the quote details
 
-# Scenario: Updating a quote
-#   Given There is an existing quote
-#   When  I edit the existing quote
-#   And   I fill in the edit form
-#   And   I click on "Update quote"
-#   Then  I see the quote has been updated
+Scenario: Updating a quote
+  Given There is an existing quote
+  When  I click on "Edit"
+  And   I fill in the edit form
+  And   I click on "Update Quote"
+  Then  I see the quote has been updated
 
 # Scenario: Deleting a quote
 #   Given There is an existing quote
