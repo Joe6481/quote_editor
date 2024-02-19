@@ -11,6 +11,7 @@ gem "jbuilder"
 gem "jsbundling-rails"
 gem "puma", ">= 5.0"
 gem "redis", ">= 4.0.1"
+gem "simple_form"
 gem "slim"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
@@ -38,6 +39,7 @@ end
 group :test do
   gem "capybara"
   gem "cucumber-rails", require: false
+  gem "database_cleaner-active_record"
   gem "rails_best_practices-rake_task", require: false
   gem "random_colourful_animal", git: "https://gitlab.agile.nat.bt.com/APP14352/small-projects/random_colourful_animal.git", tag: "v0.0.5"
   gem "rspec-rails"
