@@ -1,0 +1,86 @@
+---
+require:
+  - rubocop-capybara
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  TargetRubyVersion: 3.2.3
+  DisplayCopNames: true
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - config/puma.rb
+    - config/initializers/*
+    - db/*schema.rb
+    - node_modules/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+    - tmp/**/*
+    - vendor/**/*
+
+FactoryBot/ExcessiveCreateList:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - Gemfile
+
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*
+    - lib/**/*
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 12
+  Exclude:
+    - db/**/*
+    - lib/**/*
+
+Rails:
+  Enabled: true
+Rails/BulkChangeTable:
+  Exclude:
+    - db/*migrate/**/*
+Rails/SkipsModelValidations:
+  Include:
+    - app/controllers/**/*
+    - app/models/**/*
+Rails/ApplicationRecord:
+  Include:
+    - app/models/**/*
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+Rails/NegateInclude:
+  Enabled: true
+Rails/CreateTableWithTimestamps:
+  Exclude:
+    - db/*migrate/**/*
+Rails/ThreeStateBooleanColumn:
+  Exclude:
+    - db/*migrate/**/*
+
+RSpec/ExampleLength:
+  Max: 10
+RSpec/NestedGroups:
+  Max: 5
+
+Style/Documentation:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/DateTime:
+  Enabled: true
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+Rails/PluckInWhere:
+  Enabled: false
