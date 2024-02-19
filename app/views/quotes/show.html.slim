@@ -1,4 +1,19 @@
 .container
   = link_to sanitize("&larr; Back to quotes"), quotes_path
   .header
-    h1 = @quote.name
+    h1.text-2xl.mt-3 = @quote.name
+    table.mt-5
+      tbody
+        tr
+          td.pr-2
+            strong Quote ID:
+          td = @quote.id
+        tr
+          td.pr-2
+            strong Created at:
+          td = @quote.created_at.strftime("%d/%m/%Y %H:%M")
+        - if @quote.created_at != @quote.updated_at
+          tr
+            td.pr-2
+              strong Updated at:
+            td = @quote.updated_at.strftime("%d/%m/%Y %H:%M")

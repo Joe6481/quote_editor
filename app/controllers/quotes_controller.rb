@@ -19,7 +19,7 @@ class QuotesController < ApplicationController
     if quote.save
       redirect_to quotes_path, notice: t(".success")
     else
-      render :new, alert: t(".failure")
+      redirect_to new_quote_path, alert: t(".failure")
     end
   end
 
@@ -27,7 +27,7 @@ class QuotesController < ApplicationController
     if @quote.update(quote_params)
       redirect_to quotes_path, notice: t(".success")
     else
-      render :edit, alert: t(".failure")
+      redirect_to edit_quote_path(@quote), alert: t(".failure")
     end
   end
 

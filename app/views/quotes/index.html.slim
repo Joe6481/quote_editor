@@ -1,26 +1,13 @@
 .container
-  .header
-    h1 Quotes
+  .header.pb-5
+    h1.text-2xl.mb-3 Quotes
     = link_to "New Quote", new_quote_path, class: "btn btn-primary"
 
-  table.table-auto
-    thead
-      tr
-        th Song
-        th Artist
-        th Year
-    tbody
-      tr
-        td The Sliding Mr. Bones (Next Stop, Pottersville)
-        td Malcolm Lockyer
-        td 1961
-      tr
-        td Witchy Woman
-        td The Eagles
-        td 1972
-      tr
-        td Shining Star
-        td Earth, Wind, and Fire
-        td 1975
-
-  = render @quotes
+  .overflow-x-auto
+    table.table
+      tbody
+        - @quotes.each do |quote|
+          tr.hover
+            td = link_to quote.name, quote_path(quote)
+            td = link_to "Edit", edit_quote_path(quote), class: "btn btn-info"
+            td = button_to "Delete", quote_path(quote), method: :delete, class: "btn btn-error"

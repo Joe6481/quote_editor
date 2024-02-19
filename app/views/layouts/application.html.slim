@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-html
+html.bg-indigo-50
   head
     title QuoteEditor
     meta name="viewport" content="width=device-width,initial-scale=1"
@@ -11,7 +11,7 @@ html
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
 
   body
-    .toast.toast-top.toast-end
+    .toast.toast-top.toast-start
       - if notice
         .alert.alert-info.bg-accent data-controller="flash"
           strong
@@ -23,5 +23,5 @@ html
             button type="button" data-action="flash#dismiss" X
           span = alert
 
-    main class="container mx-auto mt-28 px-5 flex"
+    main class="container rounded-xl mx-auto my-28 p-5 flex bg-white"
       = yield
