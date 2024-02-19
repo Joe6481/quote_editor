@@ -15,6 +15,7 @@ class QuotesController < ApplicationController
 
   def create
     quote = Quote.new(quote_params)
+
     if quote.save
       redirect_to quotes_path, notice: t(".success")
     else
@@ -30,7 +31,13 @@ class QuotesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    if @quote.destroy
+      redirect_to quotes_path, notice: t(".success")
+    else
+      render :index, alert: t(".failure")
+    end
+  end
 
   private
 

@@ -21,7 +21,7 @@ Scenario: Updating a quote
   And   I click on "Update Quote"
   Then  I see the quote has been updated
 
-# Scenario: Deleting a quote
-#   Given There is an existing quote
-#   When  I delete the existing quote
-#   Then  I see the quote has been deleted
+Scenario: Deleting a quote
+  Given There is an existing quote
+  When  I click on "Delete"
+  Then  I see the quote has been deleted
