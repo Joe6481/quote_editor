@@ -16,6 +16,7 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 2.3"
+gem "term-ansicolor"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
@@ -24,6 +25,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "brakeman"
+  gem "bundler-audit"
   gem "rubocop"
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
@@ -34,7 +37,9 @@ end
 
 group :test do
   gem "capybara"
-  gem "cucumber", "~> 9.1"
+  gem "cucumber-rails", require: false
+  gem "rails_best_practices-rake_task", require: false
+  gem "random_colourful_animal", git: "https://gitlab.agile.nat.bt.com/APP14352/small-projects/random_colourful_animal.git", tag: "v0.0.5"
   gem "rspec-rails"
   gem "selenium-webdriver"
   gem "simplecov"
