@@ -23,21 +23,25 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
   gem "brakeman"
   gem "bundler-audit"
   gem "rubocop"
+  gem "rubocop-factory_bot", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
+  gem "rubocop-rake", require: false
   gem "rubocop-rspec", require: false
   gem "slim_lint"
   gem "web-console"
 end
 
 group :test do
-  gem "capybara"
+  gem "capybara-screenshot"
   gem "cucumber-rails", require: false
   gem "database_cleaner-active_record"
   gem "rails_best_practices-rake_task", require: false

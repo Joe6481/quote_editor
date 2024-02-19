@@ -1,7 +1,7 @@
 Feature: Quotes
 
 Background:
-  Given I visit the quotes index page
+  Given I am on the quotes index page
 
 Scenario: Creating a new quote
   When I click on "New Quote"
@@ -9,11 +9,10 @@ Scenario: Creating a new quote
   And  I click on "Create Quote"
   Then I see a new quote has been created
 
-# @wip
-# Scenario: Showing a quote
-#   Given There is an existing quote
-#   When  I click on the existing quote
-#   Then  I see the quote details
+Scenario: Showing a quote
+  Given There is an existing quote
+  When  I click on the existing quote
+  Then  I see the quote details
 
 # Scenario: Updating a quote
 #   Given There is an existing quote

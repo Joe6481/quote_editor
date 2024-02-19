@@ -1,9 +1,10 @@
-Given("There is an existing quote") do
-  create(:quote)
+Given "I am on the quotes index page" do
+  visit quotes_path
 end
 
-When "I visit the quotes index page" do
-  visit quotes_path
+Given("There is an existing quote") do
+  @quote = create(:quote)
+  refresh
 end
 
 When("I fill in the new form") do
@@ -11,7 +12,7 @@ When("I fill in the new form") do
 end
 
 When("I click on the existing quote") do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on @quote.name
 end
 
 When("I edit the existing quote") do
@@ -31,7 +32,8 @@ Then("I see a new quote has been created") do
 end
 
 Then("I see the quote details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content @quote.name
+  expect(page).to have_content "Back to quotes"
 end
 
 Then("I see the quote has been updated") do
