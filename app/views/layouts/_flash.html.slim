@@ -2,7 +2,7 @@
   - flash.each do |flash_type, message|
     - if flash_type == "notice"
       .alert.alert-info.bg-accent data-controller="flash"
-        span = notice
+        span = message
     - if flash_type == "alert"
       .alert.alert-info.bg-error data-controller="flash"
-        span = alert
+        span = message
