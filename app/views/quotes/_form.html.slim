@@ -1,3 +1,4 @@
 = simple_form_for quote, html: { class: "quote form flex" } do |f|
   = f.input :name, label: false, required: true, input_html: { class: "input input-bordered w-full max-w-sm" }
+  = link_to "Cancel", quotes_path, class: "btn btn--light"
   = f.submit class: "btn btn-secondary mt-4"
