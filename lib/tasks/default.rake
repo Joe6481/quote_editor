@@ -8,5 +8,7 @@ task default: %i[
   clean
   checks
   rspec
+  cucumber
+  cucumber:wip
   random_colourful_animal
 ]
