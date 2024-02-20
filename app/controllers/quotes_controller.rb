@@ -33,7 +33,10 @@ class QuotesController < ApplicationController
 
   def destroy
     if @quote.destroy
-      redirect_to quotes_path, notice: t(".success")
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: t(".success") }
+        format.turbo_stream
+      end
     else
       render :index, alert: t(".failure")
     end
