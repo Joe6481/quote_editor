@@ -1,13 +1,9 @@
 .container
   .header.pb-5
     h1.text-2xl.mb-3 Quotes
-    = link_to "New Quote", new_quote_path, class: "btn btn-primary"
+    = link_to "New Quote", new_quote_path, class: "btn btn-primary", data: { turbo_frame: dom_id(Quote.new) }
 
-  - @quotes.each do |quote|
-    .flex
-      = turbo_frame_tag dom_id(quote) do
-        .quote
-          = link_to quote.name, quote_path(quote), data: { turbo_frame: "_top" }
-          .quote_actions.flex
-            = link_to "Edit", edit_quote_path(quote), class: "btn btn-info"
-            = button_to "Delete", quote_path(quote), method: :delete, class: "btn btn-error"            
+  = turbo_frame_tag Quote.new
+
+  = turbo_frame_tag "quotes" do
+    = render @quotes

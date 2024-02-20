@@ -17,7 +17,10 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
 
     if @quote.save
-      redirect_to quotes_path, notice: t(".success")
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: t(".success") }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
