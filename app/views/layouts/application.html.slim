@@ -11,17 +11,8 @@ html.bg-indigo-50
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
 
   body
-    .toast.toast-top.toast-start
-      - if notice
-        .alert.alert-info.bg-accent data-controller="flash"
-          strong
-            button type="button" data-action="flash#dismiss" X
-          span = notice
-      - if alert
-        .alert.alert-info.bg-error data-controller="flash"
-          strong
-            button type="button" data-action="flash#dismiss" X
-          span = alert
+    .flash#flash
+      = render "layouts/flash"
 
     main class="container rounded-xl mx-auto my-28 p-5 flex bg-white"
       = yield

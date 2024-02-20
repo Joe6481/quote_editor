@@ -19,7 +19,7 @@ class QuotesController < ApplicationController
     if @quote.save
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: t(".success") }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = t(".success") }
       end
     else
       render :new, status: :unprocessable_entity
@@ -28,7 +28,10 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, notice: t(".success")
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: t(".success") }
+        format.turbo_stream { flash.now[:notice] = t(".success") }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +41,7 @@ class QuotesController < ApplicationController
     if @quote.destroy
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: t(".success") }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = t(".success") }
       end
     else
       render :index, alert: t(".failure")
