@@ -9,3 +9,13 @@ en:
     destroy:
       success: "Successfully deleted quote"
       failure: "Couldn't delete quote"
+  line_item_dates:
+    create:
+      success: "Successfully created line_item_date"
+      failure: "Couldn't create line_item_date"
+    update:
+      success: "Successfully updated line_item_date"
+      failure: "Couldn't update line_item_date"
+    destroy:
+      success: "Successfully deleted line_item_date"
+      failure: "Couldn't delete line_item_date"

@@ -1,0 +1,5 @@
+= simple_form_for [quote, line_item_date], html: { class: "line-item-date form flex" } do |f|
+  = f.input :date, as: :date, html5: true, label: false, required: true
+  / .space-x-2
+    / = link_to "Cancel", quotes_path, class: "btn btn-light"
+  = f.submit class: "btn btn-secondary"

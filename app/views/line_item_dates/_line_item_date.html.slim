@@ -1,0 +1,6 @@
+.line-item-date.mt-5
+  .header.quote.flex.space-x-1
+    .w-28
+      h2 = line_item_date.date.strftime("%d/%m/%Y")
+    = link_to "Edit", edit_quote_line_item_date_path(quote, line_item_date), class: "btn btn-info"
+    = button_to "Delete", quote_line_item_date_path(quote, line_item_date), method: :delete, class: "btn btn-error"

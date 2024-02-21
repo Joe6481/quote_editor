@@ -5,7 +5,9 @@ class QuotesController < ApplicationController
     @quotes = Quote.ordered
   end
 
-  def show; end
+  def show
+    @line_item_dates = @quote.line_item_dates.ordered
+  end
 
   def new
     @quote = Quote.new
@@ -40,7 +42,7 @@ class QuotesController < ApplicationController
   def destroy
     if @quote.destroy
       @quotes = Quote.all
-      
+
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: t(".success") }
         format.turbo_stream { flash.now[:notice] = t(".success") }

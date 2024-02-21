@@ -1,0 +1,7 @@
+.container
+  = link_to sanitize("&larr; Back to quote"), quote_path(@quote)
+
+  .header
+    h1.text-2xl.my-3 Edit line item date
+
+  = render "form", quote: @quote, line_item_date: @line_item_date

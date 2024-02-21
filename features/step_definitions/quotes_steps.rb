@@ -7,7 +7,7 @@ Given("There is an existing quote") do
   refresh
 end
 
-When("I fill in the new form") do
+When("I fill in the new quote form") do
   fill_in "quote_name", with: "new quote"
 end
 
@@ -15,7 +15,7 @@ When("I click on the existing quote") do
   click_on @quote.name
 end
 
-When("I fill in the edit form") do
+When("I fill in the edit quote form") do
   fill_in "quote_name", with: "updated quote"
 end
 
