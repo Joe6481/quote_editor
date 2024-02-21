@@ -39,6 +39,8 @@ class QuotesController < ApplicationController
 
   def destroy
     if @quote.destroy
+      @quotes = Quote.all
+      
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: t(".success") }
         format.turbo_stream { flash.now[:notice] = t(".success") }

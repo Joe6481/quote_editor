@@ -1,2 +1,6 @@
 = turbo_stream.remove @quote
 = render_turbo_stream_flash_messages
+
+- if @quotes.empty?
+  = turbo_stream.update Quote.new do
+    = render "quotes/empty_state"
