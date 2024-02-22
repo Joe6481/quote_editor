@@ -1,7 +1,7 @@
 .container
   = link_to sanitize("&larr; Back to quotes"), quotes_path
   .header
-    h1.text-2xl.mt-3 = @quote.name
+    h1.text-2xl.my-3 = @quote.name
 
   = link_to "New Line Item Date", new_quote_line_item_date_path(@quote), class: "btn btn-secondary"
   = render @line_item_dates, quote: @quote
